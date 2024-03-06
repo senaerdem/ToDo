@@ -1,7 +1,8 @@
-import { Text, View, Image, TouchableOpacity } from 'react-native'
+import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native'
 import React from 'react'
 import Input from '../shared/input'
 import Button from '../shared/Button'
+import { loginForm  } from '../../utils/const/authForm'
 
 export default function Login({navigation}) {
   return (
@@ -13,12 +14,16 @@ export default function Login({navigation}) {
         />
         </View>
 
-      <View className='mt-5 w-full'>
-        <Input title={'E-mail Adress'} />
-      </View>
-
-      <View className='mt-5 w-full'>
-        <Input title={'Password'} />
+      <View className='w-full'>
+      <FlatList
+        data={loginForm}
+        renderItem={({ item }) => (
+          <View className='mt-5 w-full'>
+            <Input title={item.title} icon={item.icon} isSecure={item.isSecure} />
+          </View>
+        )}
+        keyExtractor={item => item.id}
+      />
       </View>
 
       <View className='w-full mt-5'>
