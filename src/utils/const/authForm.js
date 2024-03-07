@@ -5,11 +5,13 @@ export const loginForm = [
     {
         id: 1,
         title: "E-mail Adress",
+        type: 'email',
         icon: <Feather name="mail" size={24} color="black" />,
     },
     {
         id: 2,
         title: "Password",
+        type: 'password',
         icon: <Ionicons name="key-outline" size={24} color="black" />,
         isSecure: true,
         secureIcon: {
@@ -23,21 +25,25 @@ export const registerForm = [
     {
         id: 1,
         title: "Name",
+        type: 'name',
         icon: <Feather name="user" size={24} color="black" />,
     },
     {
         id: 2,
         title: "Last Name",
+        type: 'surname',
         icon: <Feather name="user" size={24} color="black" />,
     },
     {
         id: 3,
         title: "E-mail Adress",
+        type: 'email',
         icon: <Feather name="mail" size={24} color="black" />,
     },
     {
         id: 4,
         title: "Password",
+        type: 'password',
         icon: <Ionicons name="key-outline" size={24} color="black" />,
         isSecure: true,
         secureIcon: {
@@ -48,6 +54,7 @@ export const registerForm = [
     {
         id: 5,
         title: "Re-password",
+        type: 'rpassword',
         icon: <Ionicons name="key-outline" size={24} color="black" />,
         isSecure: true,
         secureIcon: {

@@ -4,13 +4,14 @@ import Input from '../shared/input'
 import Button from '../shared/Button'
 import { loginForm  } from '../../utils/const/authForm'
 
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
+  
   return (
     <View className='bg-white flex-1 items-center justify-center px-5'>
         
         <View>
         <Image
-        source={require('../../../assets/images/splash.png')}
+        source={require('../../../assets/images/splash-image.png')}
         />
         </View>
 
@@ -18,7 +19,7 @@ export default function Login({navigation}) {
       <FlatList
         data={loginForm}
         renderItem={({ item }) => (
-          <View className='mt-5 w-full'>
+          <View className='mt-2 w-full'>
             <Input item={item} />
           </View>
         )}
@@ -26,11 +27,11 @@ export default function Login({navigation}) {
       />
       </View>
 
-      <View className='w-full mt-5'>
+      <View className='w-full mt-2'>
         <Button title={'Log In'} />
       </View>
 
-      <View className='w-full mt-5 flex-row'>
+      <View className='w-full mt-2 flex-row'>
         <Text className='text-primary'>Dont't you have an account yet?</Text>
         <TouchableOpacity onPress={()=> navigation.navigate('Register')}>
             <Text className='font-[600] ml-[7px] text-primary underline'>Sign Up!</Text>

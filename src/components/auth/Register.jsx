@@ -5,6 +5,7 @@ import Button from '../shared/Button'
 import { registerForm  } from '../../utils/const/authForm'
 
 export default function Register({ navigation }) {
+
   return (
     <View className='bg-white flex-1 items-center justify-center px-5'>
         

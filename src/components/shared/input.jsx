@@ -1,13 +1,26 @@
 import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { setUserValidationInput } from '../../redux/userSlice';
 
-export default function Input({ item: { title, icon, isSecure = false, secureIcon } }) {
+export default function Input({ item: { title, icon, isSecure = false, secureIcon, type } }) {
+
+  const user = useSelector((state) => state.user);
   const [isVisible, setIsVisible] = useState(true);
+  const dispatch = useDispatch();
 
   const handleChangeVisible = () => {
     setIsVisible(!isVisible);
   }
-  //console.log(title, icon, isSecure, secureIcon)
+
+  const changeFormInfo = (type, value) => {
+    dispatch(setUserValidationInput(
+      {
+        type,
+        value,
+      }
+    ));
+  }
 
   return (
     <>
@@ -18,6 +31,8 @@ export default function Input({ item: { title, icon, isSecure = false, secureIco
       <TextInput className='h-full px-[37px] text-[15px]'
        secureTextEntry={isVisible}
        placeholder={title}
+       onChangeText={(value) => { changeFormInfo(type, value) }}
+       value={user[type]}
       />
       <Text className='text-[13px] text-primary absolute -top-[8px] left-[10px] bg-white px-[10px]'>{title}</Text>
       <TouchableOpacity className='absolute right-[10] top-[12px]' onPress={handleChangeVisible}>
@@ -35,6 +50,8 @@ export default function Input({ item: { title, icon, isSecure = false, secureIco
       <View className='absolute left-[10] top-[12px]'>{icon}</View>
       <TextInput className='h-full px-[37px] text-[15px]'
        placeholder={title}
+       onChangeText={(value) => { changeFormInfo(type, value) }}
+       value={user[type]}
       />
       <Text className='text-[13px] text-primary absolute -top-[8px] left-[10px] bg-white px-[10px]'>{title}</Text>
     </View>
