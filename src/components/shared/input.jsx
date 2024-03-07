@@ -1,12 +1,13 @@
 import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 
-export default function Input({ title, icon, isSecure = false, secureIcon = { notVisible: null, visible: null } }) {
+export default function Input({ item: { title, icon, isSecure = false, secureIcon } }) {
   const [isVisible, setIsVisible] = useState(true);
 
   const handleChangeVisible = () => {
     setIsVisible(!isVisible);
   }
+  //console.log(title, icon, isSecure, secureIcon)
 
   return (
     <>

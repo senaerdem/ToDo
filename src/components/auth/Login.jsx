@@ -10,7 +10,7 @@ export default function Login({navigation}) {
         
         <View>
         <Image
-        source={require('../../../assets/images/auth-logo.png')}
+        source={require('../../../assets/images/splash.png')}
         />
         </View>
 
@@ -19,7 +19,7 @@ export default function Login({navigation}) {
         data={loginForm}
         renderItem={({ item }) => (
           <View className='mt-5 w-full'>
-            <Input title={item.title} icon={item.icon} isSecure={item.isSecure} />
+            <Input item={item} />
           </View>
         )}
         keyExtractor={item => item.id}
@@ -36,7 +36,6 @@ export default function Login({navigation}) {
             <Text className='font-[600] ml-[7px] text-primary underline'>Sign Up!</Text>
         </TouchableOpacity>
       </View>
-
     </View>
   )
 }

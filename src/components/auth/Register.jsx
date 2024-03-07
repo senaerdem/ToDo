@@ -10,7 +10,7 @@ export default function Register({ navigation }) {
         
         <View>
         <Image
-        source={require('../../../assets/images/auth-logo.png')}
+        source={require('../../../assets/images/splash.png')}
         />
         </View>
 
@@ -19,7 +19,7 @@ export default function Register({ navigation }) {
         data={registerForm}
         renderItem={({ item }) => (
           <View className='mt-5 w-full'>
-            <Input title={item.title} icon={item.icon} isSecure={item.isSecure} secureIcon={item.secureIcon}/>
+            <Input item={item} />
           </View>
         )}
         keyExtractor={item => item.id}

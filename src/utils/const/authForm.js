@@ -14,7 +14,7 @@ export const loginForm = [
         isSecure: true,
         secureIcon: {
             visible: <Ionicons name="eye-outline" size={24} color="black" />,
-            notVisible: <Ionicons name="eye-outline" size={24} color="black" />,
+            notVisible: <Ionicons name="eye-off-outline" size={24} color="black" />,
         }
     }
 ];
@@ -42,7 +42,7 @@ export const registerForm = [
         isSecure: true,
         secureIcon: {
             visible: <Ionicons name="eye-outline" size={24} color="black" />,
-            notVisible: <Ionicons name="eye-outline" size={24} color="black" />,
+            notVisible: <Ionicons name="eye-off-outline" size={24} color="black" />,
         },
     },
     {
@@ -52,7 +52,7 @@ export const registerForm = [
         isSecure: true,
         secureIcon: {
             visible: <Ionicons name="eye-outline" size={24} color="black" />,
-            notVisible: <Ionicons name="eye-outline" size={24} color="black" />,
+            notVisible: <Ionicons name="eye-off-outline" size={24} color="black" />,
         },
     },
 ];
