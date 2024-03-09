@@ -3,7 +3,6 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeScreen, Profile, AddTaskScreen, CompletedScreen, TaskScreen } from '../screen';
 import { NavigationContainer } from '@react-navigation/native';
-import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome6 } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -14,7 +13,7 @@ const Tab = createBottomTabNavigator();
 export default function UserStack() {
   return (
     <NavigationContainer>
-      <Tab.Navigator screenOptions={{headerShown: false}}>
+      <Tab.Navigator screenOptions={{headerShown: false, tabBarShowLabel: false}}>
 
         <Tab.Screen name="Home" component={HomeScreen} 
         options={{
@@ -56,20 +55,8 @@ export default function UserStack() {
 
         <Tab.Screen name="AddTask" component={AddTaskScreen} 
         options={{
-          tabBarLabel: ({ focused }) => (
-            focused
-            ?
-            <Text className='text-[11px] text-main font-medium'>Add Task</Text>
-            :
-            <Text className='text-[11px] text-secondary'>Add Task</Text>
-          ),
-          tabBarIcon: ({ focused }) => (
-            focused
-            ?
-            <Entypo name="squared-plus" size={24} color="#9775fa" />
-            :
-            <Entypo name="squared-plus" size={24} color="#343A40" />
-          ),
+          tabBarLabel: () => (<Text className='text-[11px] text-main font-medium'>Add Task</Text>),
+          tabBarIcon: () => (<Entypo name="squared-plus" size={34} color="#9775fa" />),
         }}
         />
 
