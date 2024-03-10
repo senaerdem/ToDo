@@ -19,7 +19,7 @@ export default function ListItem() {
       </View>
         <View>
         <Checkbox
-          className='rounded-[2px]'
+          className='rounded-[10px]'
           value={isChecked}
           onValueChange={setChecked}
           color={isChecked && '#4630EB'}
