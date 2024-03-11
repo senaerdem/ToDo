@@ -1,10 +1,13 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Entypo } from '@expo/vector-icons';
 import Section from '../shared/Section';
 import ListItem from '../shared/ListItem';
+import Goal from './Goal';
+import Modal from '../shared/Modal'
 
 export default function List() {
+  const [modalVisible, setModalVisible] = useState(true);
   return (
     <Section>
       <View className='flex-row justify-between'>
@@ -24,6 +27,10 @@ export default function List() {
       <TouchableOpacity className='mt-[10px]'>
         <Text className='text-center text-secondary text-[11px] underline'>Your Target</Text>
       </TouchableOpacity>
+
+      <Modal setModalVisible={setModalVisible} modalVisible={modalVisible} >
+        <Goal setModalVisible={setModalVisible} />
+      </Modal>
     </Section>
   )
 }

@@ -7,6 +7,7 @@ import PremiumBanner from '../components/shared/PremiumBanner';
 import Completed from '../components/home/Completed';
 import Notification from '../components/home/Notification';
 import Modal from '../components/shared/Modal';
+import Goal from '../components/home/Goal';
 
 export default function HomeScreen() {
   const [modalVisible, setModalVisible] = useState(false)
