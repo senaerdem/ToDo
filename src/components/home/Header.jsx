@@ -2,7 +2,7 @@ import { Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { FontAwesome6 } from '@expo/vector-icons';
 
-export default function Header() {
+export default function Header({setModalVisible}) {
   return (
     <View className='bg-white flex-row justify-between p-[10px] items-center'>
         <View className='flex-row gap-[7px] items-center'>
@@ -17,7 +17,7 @@ export default function Header() {
                 <Text className='text-secondary'>User</Text>
             </View>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
             <View className='relative w-[32px] h-[32px] justify-center items-center rounded-full'>
                 <FontAwesome6 name="bell" size={24} color="#868E96" />
                 <View className='absolute right-1 top-1 bg-[#ff3200] justify-center items-center rounded-full w-[13px] h-[13px]'>

@@ -18,6 +18,7 @@ export default function Completed() {
         <CompletedItem />
         <CompletedItem />
       </ScrollView>
+      
     </View>
   )
 }
